@@ -1,18 +1,31 @@
-<h2> <strong>Dades Usuari</strong></h2>
-<form>
-    
-    <label for="uname">Username:</label> <br>
-    <input type="text" id="uname" name="uname"><br>
-    <label for="pwd">Password:</label><br>
-    <input type="text" name="pwd" id="pwd"><br>
-    <label for="uid">User ID:</label> <br>
-    <input type="text" name="uid" id="uid"><br>
-    <label for="gid">Group ID:</label> <br>
-    <input type="text" name="gid" id="gid"><br>
-    <label for="uidinfo">User ID Info:</label><br>
-    <input type="text" name="uidinfo" id="uidinfo"><br>
-    <label for="hdirectory">Home directory:</label><br>
-    <input type="text" name="hdirectory" id="hdirectory"><br>
-    <label for="cmd">Command/shell:</label><br>
-    <input type="text" name="cmd" id="cmd">
-</form>
+<!DOCTYPE html>
+<html>
+    <head>
+        {% include 'partials/header.html' %}
+    </head>
+    <body>
+        {% include 'partials/navbar.html' %}
+        <div style="text-align: center;">
+            <h2> <strong>User information</strong></h2>
+            <form>
+                
+                <label for="uname">Username:</label> <br>
+                <input type="text" id="uname" name="uname"><br>
+                <label for="pwd">Password:</label><br>
+                <input type="text" name="pwd" id="pwd"><br>
+                <label for="uid">User ID:</label> <br>
+                <input type="text" name="uid" id="uid"><br>
+                <label for="gid">Group ID:</label> <br>
+                <input type="text" name="gid" id="gid"><br>
+                <label for="uidinfo">User ID Info:</label><br>
+                <input type="text" name="uidinfo" id="uidinfo"><br>
+                <label for="hdirectory">Home directory:</label><br>
+                <input type="text" name="hdirectory" id="hdirectory"><br>
+                <label for="cmd">Command/shell:</label><br>
+                <input type="text" name="cmd" id="cmd">
+            </form>
+  
+       
+        </div>
+    </body>
+</html>
