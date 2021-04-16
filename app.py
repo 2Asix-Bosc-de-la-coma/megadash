@@ -23,6 +23,12 @@ def mainusuaris():
         
         return render_template("userForm.html",**locals())
 
+@app.route('/users')
+def mainusuaris():
+        
+        return render_template("userForm.html",**locals())
+
+
 #Form functions, data reception only
 #@app.route('/managUser', methods=['POST'])
 #def managUser():
