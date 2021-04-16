@@ -1,36 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+  {% include 'partials/header.html' %}
 </head>
 <body>
+  {% include 'partials/navbar.html' %}
+<div style="text-align: center;">
+  <h1>Welcome to DMLS</h1>
+  <p>Use the menu to manage users and groups</p>
+</div>
+<div style="position: absolute;bottom: 10px; right: 10px;">
 
-<div id="mySidebar" class="sidebar">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <a href="#">Grups</a>
-  <a href="#">Members del Grups</a>
-  <a href="#">Clients</a>
-  <a href="#"></a>
+<img src="../static/linux.png" alt="logo linux">
 </div>
 
-<div id="main">
-  <button class="openbtn" onclick="openNav()">☰ Dashboard</button>  
-  <h2></h2>
-  <p></p>
-</div>
-
-<script>
-function openNav() {
-  document.getElementById("mySidebar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-}
-
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
-}
-</script>
    
 </body>
 </html> 
