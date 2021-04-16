@@ -23,10 +23,10 @@ def mainusuaris():
         
         return render_template("userForm.html",**locals())
 
-@app.route('/users')
-def mainusuaris():
+@app.route('/userdel')
+def delusers():
         
-        return render_template("userForm.html",**locals())
+        return render_template("userDel.html",**locals())
 
 
 #Form functions, data reception only
