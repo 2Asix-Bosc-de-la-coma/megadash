@@ -29,6 +29,12 @@ def delusers():
         return render_template("userDel.html",**locals())
 
 
+@app.route('/readgroup')
+def readgroup():
+        
+        return render_template("readgroup.html",**locals())
+
+
 #Form functions, data reception only
 #@app.route('/managUser', methods=['POST'])
 #def managUser():
