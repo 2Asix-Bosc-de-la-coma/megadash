@@ -28,12 +28,22 @@ def delusers():
         
         return render_template("userDel.html",**locals())
 
-
+def delchar(grup):
+        return grup[1:]
 @app.route('/readgroup')
+
 def readgroup():
-        
+        read=str(executar()).strip("\\n'").strip("b'")
+        grups = read.split("\\")
+        grups[0]='n'+grups[0]
+        grups=map(delchar,grups)
         return render_template("readgroup.html",**locals())
 
+def executar():
+        cmd = ["/usr/bin/grupspy.sh"]
+        p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+        grups, error = p.communicate()
+        return grups
 
 #Form functions, data reception only
 #@app.route('/managUser', methods=['POST'])
