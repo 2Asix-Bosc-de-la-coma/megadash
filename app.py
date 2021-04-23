@@ -27,6 +27,10 @@ def mainusuaris():
 def delusers():
         
         return render_template("userDel.html",**locals())
+@app.route('/grupdel')
+def grupdel():
+        
+        return render_template("GrupDel.html",**locals())
 
 def delchar(grup):
         return grup[1:]
