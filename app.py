@@ -36,6 +36,11 @@ def groupForm():
         group = request.args.get('idgroup')
         return render_template("groupForm.html",**locals())
 
+@app.route('/userupdate')
+def updateusers():
+        
+        return render_template("userUpdate.html",**locals())
+
 def delchar(grup):
         return grup[1:]
 @app.route('/readgroup')
