@@ -31,6 +31,10 @@ def delusers():
 def grupdel():
         
         return render_template("GrupDel.html",**locals())
+@app.route('/groupForm')
+def groupForm():
+        
+        return render_template("GroupForm.html",**locals())
 
 def delchar(grup):
         return grup[1:]
