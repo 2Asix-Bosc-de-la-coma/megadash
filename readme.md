@@ -15,4 +15,4 @@ In the first realese it will only work on the local server where the app is inst
     Pol Reixach
     Paula Soy
     Nil Torrent
-    Alex Turon
+    Alex Turon 
