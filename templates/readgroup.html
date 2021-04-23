@@ -6,16 +6,15 @@
     <body>
         {% include 'partials/navbar.html' %}
     <div>
-        {% print(9) %}
-            {%  print(3) %} 
+        <h2> <strong>Read Grup</strong></h2>
             {%  for g in grups: %} 
-            {%      print("<a href='"+g+"' >hhol</a>") %} <br> 
+                 <a href='grupname/idgroup={% print(g) %}' >{% print(g) %}</a>  <br> 
             {%  endfor %}
 
 
       
                  
-        
+
     </div>
     </body>
 </html>
