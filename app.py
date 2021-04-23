@@ -28,6 +28,11 @@ def delusers():
         
         return render_template("userDel.html",**locals())
 
+@app.route('/userupdate')
+def updateusers():
+        
+        return render_template("userUpdate.html",**locals())
+
 def delchar(grup):
         return grup[1:]
 @app.route('/readgroup')
