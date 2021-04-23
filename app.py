@@ -31,10 +31,10 @@ def delusers():
 def grupdel():
         
         return render_template("GrupDel.html",**locals())
-@app.route('/groupForm')
+@app.route('/viewGroup',methods = ['GET'])
 def groupForm():
-        
-        return render_template("GroupForm.html",**locals())
+        group = request.args.get('idgroup')
+        return render_template("groupForm.html",**locals())
 
 def delchar(grup):
         return grup[1:]
