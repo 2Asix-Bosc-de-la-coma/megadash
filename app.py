@@ -27,6 +27,10 @@ def mainusuaris():
 def delusers():
         
         return render_template("userDel.html",**locals())
+@app.route('/grupdel')
+def grupdel():
+        
+        return render_template("GrupDel.html",**locals())
 
 @app.route('/userupdate')
 def updateusers():
