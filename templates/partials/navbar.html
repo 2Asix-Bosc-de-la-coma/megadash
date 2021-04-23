@@ -1,0 +1,42 @@
+
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+ 
+    <div class="dropdown">
+      <button class="dropbtn">Groups</button>
+      <div class="dropdown-content">
+        <a href="#">Create</a>
+        <a href="#">Read</a>
+        <a href="#">Update</a>
+        <a href="#">Delete</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Users</button>
+      <div class="dropdown-content">
+        <a href="#">Create</a>
+        <a href="#">Read</a>
+        <a href="#">Update</a>
+        <a href="userdel#">Delete</a>
+      </div>
+    </div>
+    <a href="#"></a>
+  </div>
+  
+  <div id="main">
+    <button class="openbtn" onclick="openNav()">☰ Dashboard</button>  
+    <h2></h2>
+    <p></p>
+  </div>
+</div> 
+  <script>
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+    }
+    </script>
