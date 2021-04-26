@@ -53,7 +53,8 @@ def readgroup():
         return render_template("readgroup.html",**locals())
 
 def executar():
-        cmd = ["/usr/bin/grupspy.sh"]
+       # cmd = ["/usr/bin/grupspy.sh"]
+        cmd = ["cut", "-d:","-f1", "/etc/group", "| sort "]
         p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
         grups, error = p.communicate()
         return grups
