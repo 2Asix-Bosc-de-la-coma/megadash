@@ -31,9 +31,11 @@ def delusers():
 def grupdel():
         
         return render_template("GrupDel.html",**locals())
+
 @app.route('/viewGroup',methods = ['GET'])
 def groupForm():
         group = request.args.get('idgroup')
+        
         return render_template("viewGroup.html",**locals())
 
 @app.route('/userupdate')
