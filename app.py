@@ -35,6 +35,7 @@ def grupdel():
 @app.route('/viewGroup',methods = ['GET'])
 def groupForm():
         group = request.args.get('idgroup')
+        members = obtenirMembres(group)
         
         return render_template("viewGroup.html",**locals())
 
@@ -60,6 +61,14 @@ def executar():
         p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
         grups, error = p.communicate()
         return grups
+
+
+def obtenirMembres(group):
+        cmd = ["members", group]
+        p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+        members, error = p.communicate()
+        return members
+
 
 #Form functions, data reception only
 #@app.route('/managUser', methods=['POST'])
