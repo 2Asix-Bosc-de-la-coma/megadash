@@ -42,6 +42,7 @@ def groupForm():
 @app.route('/viewUser',methods = ['GET'])
 def userForm():
         user = request.args.get('iduser')
+        grups=obtenirUsers(user)
         
         return render_template("viewUser.html",**locals())
 @app.route('/groupUpdate',methods = ['GET'])
@@ -79,10 +80,7 @@ def delcharuser(user):
 @app.route('/readuser')
 
 def readusers():
-        read=str(executaruser()).strip("\\n'").strip("b'")
-        users = read.split("\\")
-        users[0]='n'+users[0]
-        users=map(delcharuser,users)
+        users=executaruser()
         return render_template("readuser.html",**locals())
 
 def executaruser():
@@ -92,6 +90,10 @@ def executaruser():
         #p2 = subprocess.Popen(["sort"], stdin=p1.stdout, stdout=subprocess.PIPE)
         p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
         users, error = p.communicate()
+        read=str(users).strip("\\n'").strip("b'")
+        users = read.split("\\")
+        users[0]='n'+users[0]
+        users=map(delcharuser,users)
         return users
 
 def obtenirMembres(group):
@@ -100,6 +102,11 @@ def obtenirMembres(group):
         members, error = p.communicate()
         return members
 
+def obtenirUsers(user):
+        cmd = ["getent", "group", user, "|", "cut", "-d:", "-f4"]
+        p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+        groupsin, error = p.communicate()
+        return groupsin
 
 #Form functions, data reception only
 #@app.route('/managUser', methods=['POST'])
