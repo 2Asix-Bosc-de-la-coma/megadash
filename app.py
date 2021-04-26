@@ -39,20 +39,17 @@ def groupForm():
         
         return render_template("viewGroup.html",**locals())
 
-<<<<<<< HEAD
 @app.route('/viewUser',methods = ['GET'])
 def userForm():
         user = request.args.get('iduser')
         
         return render_template("viewUser.html",**locals())
-=======
 @app.route('/groupUpdate',methods = ['GET'])
 def groupUpdate():
         group = request.args.get('idgroup')
         members = obtenirMembres(group)
         
         return render_template("groupUpdate.html",**locals())
->>>>>>> 2e6c3aa3b034b1638aabdcbeec1a6461360ad828
 
 @app.route('/userupdate')
 def updateusers():
@@ -77,7 +74,6 @@ def executar():
         grups, error = p.communicate()
         return grups
 
-<<<<<<< HEAD
 def delcharuser(user):
         return user[1:]
 @app.route('/readuser')
@@ -97,7 +93,6 @@ def executaruser():
         p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
         users, error = p.communicate()
         return users
-=======
 
 def obtenirMembres(group):
         cmd = ["members", group]
@@ -105,7 +100,6 @@ def obtenirMembres(group):
         members, error = p.communicate()
         return members
 
->>>>>>> 2e6c3aa3b034b1638aabdcbeec1a6461360ad828
 
 #Form functions, data reception only
 #@app.route('/managUser', methods=['POST'])
