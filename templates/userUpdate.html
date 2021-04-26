@@ -4,61 +4,68 @@
         {% include 'partials/header.html' %}
     </head>
     <body>
-        {% include 'partials/navbar.html' %}
        
-            <h2 style="text-align: center;"><strong>Update User</strong></h2>
-            <div style="text-align: left; float: left; margin-left: 250px;">
-            <h3> <strong>Info User</strong></h3>
+           
+            {% include 'partials/navbar.html' %}
+            <div class="container">
+                <h2 style="text-align: center;"><strong>Update User</strong></h2>
+                <div class="row">
             
-            <form>
-                
-                <label for="uname">Name:</label> <br>
-                <input type="text" id="name" name="name"><br>
-                <label for="passwd">Password:</label> <br>
-                <input type="text" id="passwd" name="passwd"><br>
-                <br>
-                <input type="submit" value="UPDATE">
-
-
-            </form>
-            </div>
-
-
-            <div style="text-align: left; float: right;">
-            <h3> <strong>Add in group</strong></h3>
-            
-            <form>
-                
-                <label for="uname">Name:</label> <br>
-                <input type="text" id="name" name="name" size="47"><br>
-                <label for="addgroup">Group:</label> <br>
-                <input type="text" id="addgroup" name="addgroup" size="47"><br>
-                <br>
-                <input type="submit" value="ADD">
-
-
-            </form>
-            </div>
-
-            <div style="text-align: left; margin-left: 860px; margin-top: 300px;">
-                <h3> <strong>Delete in group</strong></h3>
+                <div class="col-md-6 ">
+                <h3> <strong>Info User</strong></h3>
                 
                 <form>
                     
                     <label for="uname">Name:</label> <br>
                     <input type="text" id="name" name="name"><br>
-                    <label for="delgroup">Group:</label> <br>
-                    <input type="text" id="delgroup" name="delgroup"><br>
+                    <label for="passwd">Password:</label> <br>
+                    <input type="text" id="passwd" name="passwd"><br>
                     <br>
-                    <input type="submit" value="DELETE">
-    
-    
+                    <input type="submit" value="UPDATE">
+
+
                 </form>
                 </div>
-                <h4>User is in groups: </h4>
 
-  
-       
-       
+
+                <div class="col-md-6 ">
+                <h3> <strong>Add in group</strong></h3>
+                
+                <form>
+                    
+                    <label for="uname">Name:</label> <br>
+                    <input type="text" id="name" name="name" size="47"><br>
+                    <label for="addgroup">Group:</label> <br>
+                    <input type="text" id="addgroup" name="addgroup" size="47"><br>
+                    <br>
+                    <input type="submit" value="ADD">
+
+
+                </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 offset-lg-6 ">
+                    <h3> <strong>Delete in group</strong></h3>
+                    
+                    <form>
+                        
+                        <label for="uname">Name:</label> <br>
+                        <input type="text" id="name" name="name"><br>
+                        <label for="delgroup">Group:</label> <br>
+                        <input type="text" id="delgroup" name="delgroup"><br>
+                        <br>
+                        <input type="submit" value="DELETE">
+        
+        
+                    </form>
+                </div>
+                <div class="col-md-3">
+                    <h4 style="float: right;">User is in groups:</h4>
+                </div>
+            </div>
+        
+        </div>
+      
     </body>
 </html>
