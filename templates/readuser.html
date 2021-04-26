@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% include 'partials/header.html' %}
+    </head>
+    <body>
+        {% include 'partials/navbar.html' %}
+    <div>
+        <h2> <strong>Read User</strong></h2>
+            {%  for g in users: %} 
+                 <a href='viewUser?iduser={% print(g) %}' >{% print(g) %}</a>  <br> 
+            {%  endfor %}
+
+
+      
+                 
+
+    </div>
+    </body>
+</html>

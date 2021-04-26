@@ -38,6 +38,12 @@ def groupForm():
         
         return render_template("viewGroup.html",**locals())
 
+@app.route('/viewUser',methods = ['GET'])
+def userForm():
+        user = request.args.get('iduser')
+        
+        return render_template("viewUser.html",**locals())
+
 @app.route('/userupdate')
 def updateusers():
         
@@ -60,6 +66,26 @@ def executar():
         p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
         grups, error = p.communicate()
         return grups
+
+def delcharuser(user):
+        return user[1:]
+@app.route('/readuser')
+
+def readusers():
+        read=str(executaruser()).strip("\\n'").strip("b'")
+        users = read.split("\\")
+        users[0]='n'+users[0]
+        users=map(delcharuser,users)
+        return render_template("readuser.html",**locals())
+
+def executaruser():
+       # cmd = ["/usr/bin/grupspy.sh"]
+        cmd = ["cut", "-d:","-f1", "/etc/passwd", "|", "sort"]
+        #p1 = subprocess.Popen(["cut", "-d:","-f1", "/etc/passwd"], stdout=subprocess.PIPE)
+        #p2 = subprocess.Popen(["sort"], stdin=p1.stdout, stdout=subprocess.PIPE)
+        p = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+        users, error = p.communicate()
+        return users
 
 #Form functions, data reception only
 #@app.route('/managUser', methods=['POST'])
