@@ -13,13 +13,17 @@
             
                 <div class="col-md-6 ">
                 <h1>Group {% print(group)%} </h1> 
-                
+                {% print(users)%}
                 <form>
                     
                     
                     <label for="membres">Membres: {% print(members)%}</label> <br>
                     <select name="membres" multiple>
-                        
+
+                    {%  for g in users: %} 
+                        oPTION {% print(g) %} 
+                    {%  endfor %}
+                    
 
                     </select>
                     <br>

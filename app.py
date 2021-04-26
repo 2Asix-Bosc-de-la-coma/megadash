@@ -48,7 +48,10 @@ def userForm():
 def groupUpdate():
         group = request.args.get('idgroup')
         members = obtenirMembres(group)
-        
+        read=str(executaruser()).strip("\\n'").strip("b'")
+        users = read.split("\\")
+        users[0]='n'+users[0]
+        users=map(delcharuser,users)
         return render_template("groupUpdate.html",**locals())
 
 @app.route('/userupdate')
