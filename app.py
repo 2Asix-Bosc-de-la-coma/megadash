@@ -39,6 +39,13 @@ def groupForm():
         
         return render_template("viewGroup.html",**locals())
 
+@app.route('/groupUpdate',methods = ['GET'])
+def groupUpdate():
+        group = request.args.get('idgroup')
+        members = obtenirMembres(group)
+        
+        return render_template("groupUpdate.html",**locals())
+
 @app.route('/userupdate')
 def updateusers():
         
