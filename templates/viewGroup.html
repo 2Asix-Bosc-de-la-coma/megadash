@@ -5,7 +5,6 @@
     </head>
     <body>
         {% include 'partials/navbar.html' %}
-        <h2> <strong>View Group</strong></h2>
         <h1>Group {% print(group)%} </h1> 
        
        
@@ -15,8 +14,9 @@
            
 
 
-                <label for="name">Members:{% print(Members)%}</label> <br>
-               
+                <label for="name">Members:{% print(members)%}</label> <br>
+                <a href='viewGroup?idgroup={% print(group) %}'>DELETE</a>
+                <a href='groupUpdate?idgroup={% print(group) %}'>UPDATE</a>
               
                 
         
